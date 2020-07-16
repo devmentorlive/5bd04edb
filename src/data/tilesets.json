@@ -1,0 +1,7 @@
+{
+  "rpg-nature-tileset": {
+    "variants": ["spring", "fall", "winter"],
+    "height": 288,
+    "width": 640
+  }
+}
