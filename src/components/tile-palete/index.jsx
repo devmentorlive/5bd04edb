@@ -3,7 +3,6 @@ import Handle from "./handle";
 import Palete from "./palete";
 
 export default function TilePallet({
-  activeLayer,
   setTiles,
   tiles,
   tileset,

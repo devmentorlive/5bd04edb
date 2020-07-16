@@ -15,11 +15,7 @@ export default function Handle({
   defaultTile,
 }) {
   const tilesetOptions = Object.keys(tilesets).flatMap((set) =>
-    tilesets[set].variants.map((variant) => (
-      <option value={`${set}/${variant}`}>
-        {set} - {variant}
-      </option>
-    ))
+    tilesets[set].variants.map((variant) => `${set}/${variant}`)
   );
 
   function fillLayer0() {
@@ -91,7 +87,9 @@ export default function Handle({
 
         <div style={{ padding: "0.25rem" }}>
           <Dropdown
-            onChange={setTileset}
+            onChange={(e) => {
+              setTileset(e.value);
+            }}
             value={tileset}
             options={tilesetOptions}
           />
