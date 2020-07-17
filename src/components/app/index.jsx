@@ -1,40 +1,8 @@
 import React, { useState, useEffect } from "react";
+import useDraggable from "../../hooks/use-draggable";
 
 export default function App() {
-  const [position, setPosition] = useState({ x: 100, y: 100 });
-
-  useEffect(() => {
-    const handle = document.getElementById("handle");
-    handle.addEventListener("mousedown", function (e) {
-      e.preventDefault();
-      handle.style.pointerEvents = "none";
-
-      document.body.addEventListener("mousemove", move);
-      document.body.addEventListener(
-        "mouseup",
-        () => {
-          document.body.removeEventListener("mousemove", move);
-          handle.style.pointerEvents = "initial";
-        },
-        false
-      );
-
-      return () => {
-        document.body.removeEventListener("mousedown", move);
-        document.body.removeEventListener("mouseup", move);
-        document.body.removeEventListener("mousemove", move);
-      };
-    });
-  }, []);
-
-  function move(e) {
-    const pos = {
-      x: e.clientX,
-      y: e.clientY,
-    };
-
-    setPosition(pos);
-  }
+  const { position } = useDraggable("handle");
 
   return (
     <div
