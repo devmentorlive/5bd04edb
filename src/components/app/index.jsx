@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useDraggable from "../../hooks/use-draggable";
+import TilePalette from "../tile-palette";
 
 export default function App() {
   const { position } = useDraggable("handle");
@@ -15,21 +16,13 @@ export default function App() {
         border: "1px solid black",
       }}
     >
-      <div
-        id="palette"
-        style={{
-          position: "absolute",
-          border: "1px solid black",
-          top: position.y,
-          left: position.x,
-          zIndex: 100,
-          width: 200,
-          height: 200,
-          backgroundColor: "white",
+      <TilePalette
+        position={position}
+        size={{
+          width: 640,
+          height: 288,
         }}
-      >
-        <img id="handle" src="/img/drag-handle.png" alt="" />
-      </div>
+      />
     </div>
   );
 }
