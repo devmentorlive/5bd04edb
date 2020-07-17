@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TilePalette({ position, size }) {
+export default function TilePalette({ tileset, position, size }) {
   const { width, height } = size;
   const tiles = [];
   let id = 0;
@@ -34,9 +34,9 @@ export default function TilePalette({ position, size }) {
               style={{
                 borderTop: "1px solid #333",
                 borderRight: "1px solid #333",
-                background: `url(/sprites/rpg-nature-tileset/spring.png) -${
-                  x * 32
-                }px -${y * 32}px no-repeat`,
+                background: `url(/sprites/${tileset}.png) -${x * 32}px -${
+                  y * 32
+                }px no-repeat`,
                 width: 32,
                 height: 32,
               }}
