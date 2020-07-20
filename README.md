@@ -25,9 +25,6 @@ Happy Hacking!
 - [04-palette-sprite](https://github.com/devmentorlive/5bd04edb/tree/04-palette-sprite)
 - [05-tile-map](https://github.com/devmentorlive/5bd04edb/tree/05-tile-map)
 - [06-drop-tiles](https://github.com/devmentorlive/5bd04edb/tree/06-drop-tiles)
-- [07-toolbar](https://github.com/devmentorlive/5bd04edb/tree/07-toolbar)
-- [08-changable-tileset](https://github.com/devmentorlive/5bd04edb/tree/08-changable-tileset)
-- [09-fill-base-layer](https://github.com/devmentorlive/5bd04edb/tree/09-fill-base-layer)
 
 ## Get Live, Affordable JavaScript Mentorship
 
