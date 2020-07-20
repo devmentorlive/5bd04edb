@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function TilePalette({ tileset, position, size }) {
+export default function TilePalette({
+  tileset,
+  position,
+  size,
+  activeTile,
+  setActiveTile,
+}) {
   const { width, height } = size;
   const tiles = [];
   let id = 0;
@@ -22,15 +28,22 @@ export default function TilePalette({ tileset, position, size }) {
         top: position.y,
         left: position.x,
         zIndex: 100,
-
         backgroundColor: "white",
       }}
     >
       <img id="handle" src="/img/drag-handle.png" alt="" />
+      <div
+        style={{
+          background: `url(/sprites/${tileset}.png) -${activeTile.x}px -${activeTile.y}px no-repeat`,
+          width: 32,
+          height: 32,
+        }}
+      />
       {tiles.map((row, y) => (
         <div style={{ display: "flex" }}>
           {row.map((tile, x) => (
             <div
+              onClick={() => setActiveTile({ x: x * 32, y: y * 32 })}
               style={{
                 borderTop: "1px solid #333",
                 borderRight: "1px solid #333",

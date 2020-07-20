@@ -5,6 +5,7 @@ import Map from "../map";
 
 export default function App() {
   const [tileset, setTileset] = useState("rpg-nature-tileset/spring");
+  const [activeTile, setActiveTile] = useState({ x: 1 * 32, y: 4 * 32 });
   const [tiles, setTiles] = useState([]);
   const [mapSize, setMapSize] = useState({
     width: 800,
@@ -40,13 +41,21 @@ export default function App() {
       <TilePalette
         position={position}
         tileset={tileset}
+        activeTile={activeTile}
+        setActiveTile={setActiveTile}
         size={{
           width: 640,
           height: 288,
         }}
       />
 
-      <Map tiles={tiles} tileset={tileset} size={mapSize} />
+      <Map
+        tiles={tiles}
+        tileset={tileset}
+        size={mapSize}
+        activeTile={activeTile}
+        setTiles={setTiles}
+      />
     </div>
   );
 }
